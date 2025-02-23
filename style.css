@@ -36,8 +36,6 @@ body{
     margin-right: 16px;
     font-size: 18px;
     height: 60px;
-
-
 }
 .search button{
     border: 0;
@@ -75,7 +73,6 @@ body{
     justify-content: space-between;
     padding: 0 20px;
     margin-top: 50px;
-
 }
 
 .col{
