@@ -4,6 +4,7 @@ const apiurl = "https://api.openweathermap.org/data/2.5/weather?units=metric&q="
 const searchBox = document.querySelector(".search input");
 const searchBtn = document.querySelector(".search button");
 const weatherIcon = document.querySelector(".weather-icon");
+const windIcon = document.querySelector(".wind-icon"); // New element for wind icon
 
 async function checkweather(city) {
     const response = await fetch(apiurl + city + `&appid=${apikey}`);
@@ -17,8 +18,13 @@ async function checkweather(city) {
 
     // Use the weather icon code provided by OpenWeather
     const iconCode = data.weather[0].icon;
-    weatherIcon.src = `http://openweathermap.org/img/wn/${iconCode}.png`; // Using icon code from OpenWeather API
+    weatherIcon.src = `http://openweathermap.org/img/wn/${iconCode}.png`; // Dynamically set weather icon
 
+    // Optionally, set the wind icon if desired
+    const windIconCode = "wind"; // You can customize this based on your icons
+    windIcon.src = `path_to_your_images/${windIconCode}.png`; // Set wind icon dynamically if required
+
+    // Show weather information
     document.querySelector(".weather").style.display = "block";
 }
 
